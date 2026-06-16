@@ -10,7 +10,23 @@ let placeArray = ["on the moon","on the chair","in my spaghetti","in my soup","o
 
 let subjectCounter = -1;
 
+let verbCounter = -1;
+
+let adjectiveCounter = -1;
+
+let nounCounter = -1;
+
+let placeCounter = -1;
+
 const subjectButton = document.getElementById('Subject');
+
+const verbButton = document.getElementById('Verb');
+
+const adjectiveButton = document.getElementById('Adjective');
+
+const nounButton = document.getElementById('Noun');
+
+const placeButton = document.getElementById('Place');
 
 function subjectChange(event){
     subjectCounter++;
@@ -22,7 +38,16 @@ function subjectChange(event){
 }
 
 function verbChange(event){
-
+    verbCounter++;
+    verbButton.textContent = verbArray[verbCounter];
+    if(verbCounter==verbArray.length){
+        verbButton.textContent = "Verb";
+        verbCounter=-1;
+    }
 }
 
+
+
 subjectButton.addEventListener('click',subjectChange);
+
+verbButton.addEventListener('click',verbChange);
