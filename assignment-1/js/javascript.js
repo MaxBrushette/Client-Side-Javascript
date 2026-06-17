@@ -55,8 +55,19 @@ function adjectiveChange(event){
     }
 }
 
+function nounChange(event){
+    nounCounter++;
+    nounButton.textContent=nounArray[nounCounter];
+    if(nounCounter==nounArray.length){
+        nounButton.textContent = "Noun";
+        nounCounter=-1;
+    }
+}
+
 subjectButton.addEventListener('click',subjectChange);
 
 verbButton.addEventListener('click',verbChange);
 
 adjectiveButton.addEventListener('click',adjectiveChange);
+
+nounButton.addEventListener('click',nounChange);
