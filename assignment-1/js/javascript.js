@@ -1,3 +1,4 @@
+//Arrays
 let subjectArray = ["The turkey","Mom","Dad","The Dog","My teacher","The elephant","The cat"];
 
 let verbArray = ["sat on","ate","danced with","saw","doesn't like","kissed"];
@@ -7,7 +8,7 @@ let adjectiveArray = ["a funny","a scary","a goofy","a slimy","a barking","a fat
 let nounArray = ["goat","monkey","fish","cow","frog","bug","worm"];
 
 let placeArray = ["on the moon","on the chair","in my spaghetti","in my soup","on the grass","in my shoes"];
-
+//Counters are negative so they are their defaults when not something in the array.
 let subjectCounter = -1;
 
 let verbCounter = -1;
@@ -17,7 +18,7 @@ let adjectiveCounter = -1;
 let nounCounter = -1;
 
 let placeCounter = -1;
-
+//Consts for the buttons and story.
 const subjectButton = document.getElementById('Subject');
 
 const verbButton = document.getElementById('Verb');
@@ -33,7 +34,8 @@ const submitButton = document.getElementById('Submit');
 const resetButton = document.getElementById('Reset');
 
 const story = document.getElementById('Story');
-
+//Functions for changes.
+//Each one follows the same format where it adds to the counter on each click, updating which word is displayed on the button and will be added to the story output.
 function subjectChange(event){
     subjectCounter++;
     subjectButton.textContent = subjectArray[subjectCounter];
@@ -78,11 +80,13 @@ function placeChange(event){
         placeCounter=-1;
     }
 }
-
+//Story output handles the randomization so that it can all be output in one button if the buttons are set to their defaults.
 function storyOutput(event){
     if(subjectCounter == -1){
+        //Randomizes ( Each one is done individually so they all aren't the same number. )
         subjectCounter = Math.floor(Math.random()*subjectArray.length);
         subjectButton.textContent=subjectArray[subjectCounter];
+        //Changes the color of the text for the button, signifying it is random.
         subjectButton.style.color='red';
     }
     if(verbCounter==-1){
@@ -106,7 +110,7 @@ function storyOutput(event){
         placeButton.style.color='red';
     }
     story.textContent = "" + subjectArray[subjectCounter] + " " + verbArray[verbCounter] + " " + adjectiveArray[adjectiveCounter] + " " + nounArray[nounCounter] + " " + placeArray[placeCounter];
-
+    //Removes the event listener so they can't be changed after submitting.
     subjectButton.removeEventListener('click',subjectChange);
     verbButton.removeEventListener('click',verbChange);
     adjectiveButton.removeEventListener('click',adjectiveChange);
@@ -114,19 +118,20 @@ function storyOutput(event){
     placeButton.removeEventListener('click',placeChange);
 }
 function reset(event){
+    //Each counter is back at -1.
     subjectCounter = -1;
     verbCounter=-1;
     adjectiveCounter=-1;
     nounCounter=-1;
     placeCounter=-1;
-
+    //Buttons are back to their default text state.
     subjectButton.textContent="Subject";
     verbButton.textContent="Verb";
     adjectiveButton.textContent="Adjective";
     nounButton.textContent="Noun";
     placeButton.textContent="Place";
     story.textContent="Story Output";
-
+    //Removes all the color ( if there is any )
     subjectButton.style.color='';
     verbButton.style.color='';
     adjectiveButton.style.color='';
@@ -139,17 +144,11 @@ function reset(event){
     nounButton.addEventListener('click', nounChange);
     placeButton.addEventListener('click', placeChange);
 }
-
+//Initial event listeners.
 subjectButton.addEventListener('click', subjectChange);
-
 verbButton.addEventListener('click', verbChange);
-
 adjectiveButton.addEventListener('click', adjectiveChange);
-
 nounButton.addEventListener('click', nounChange);
-
 placeButton.addEventListener('click', placeChange);
-
 submitButton.addEventListener('click', storyOutput);
-
 resetButton.addEventListener('click', reset);
