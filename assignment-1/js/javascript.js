@@ -125,14 +125,14 @@ function reset(event){
     adjectiveButton.textContent="Adjective";
     nounButton.textContent="Noun";
     placeButton.textContent="Place";
-    story.textContent="";
+    story.textContent="Story Output";
 
     subjectButton.style.color='';
     verbButton.style.color='';
     adjectiveButton.style.color='';
     nounButton.style.color='';
     placeButton.style.color='';
-
+    //Re-Adds event listeners if submit was clicked.
     subjectButton.addEventListener('click', subjectChange);
     verbButton.addEventListener('click', verbChange);
     adjectiveButton.addEventListener('click', adjectiveChange);
