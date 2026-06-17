@@ -30,6 +30,8 @@ const placeButton = document.getElementById('Place');
 
 const submitButton = document.getElementById('Submit');
 
+const resetButton = document.getElementById('Reset');
+
 const story = document.getElementById('Story');
 
 function subjectChange(event){
@@ -80,30 +82,56 @@ function placeChange(event){
 function storyOutput(event){
     if(subjectCounter == -1){
         subjectCounter = Math.floor(Math.random()*subjectArray.length);
+        subjectButton.textContent=subjectArray[subjectCounter];
+        subjectButton.style.color='red';
     }
     if(verbCounter==-1){
         verbCounter = Math.floor(Math.random()*verbArray.length);
+        verbButton.textContent=verbArray[verbCounter];
+        verbButton.style.color='red';
     }
     if(adjectiveCounter==-1){
         adjectiveCounter = Math.floor(Math.random()*adjectiveArray.length);
+        adjectiveButton.textContent=adjectiveArray[adjectiveCounter];
+        adjectiveButton.style.color='red';
     }
     if(nounCounter==-1){
         nounCounter = Math.floor(Math.random()*nounArray.length);
+        nounButton.textContent=nounArray[nounCounter];
+        nounButton.style.color='red';
     }
     if(placeCounter==-1){
         placeCounter = Math.floor(Math.random()*placeArray.length);
+        placeButton.textContent=placeArray[placeCounter];
+        placeButton.style.color='red';
     }
-    story.textContent = "" + subjectArray[subjectCounter] + " " + verbArray[verbCounter] + " " +adjectiveArray[adjectiveCounter] + " " + nounArray[nounCounter] + " " + placeArray[placeCounter];
+    story.textContent = "" + subjectArray[subjectCounter] + " " + verbArray[verbCounter] + " " + adjectiveArray[adjectiveCounter] + " " + nounArray[nounCounter] + " " + placeArray[placeCounter];
+}
+function reset(event){
+    subjectCounter = -1;
+    verbCounter=-1;
+    adjectiveCounter=-1;
+    nounCounter=-1;
+    placeCounter=-1;
+
+    subjectButton.textContent="Subject";
+    verbButton.textContent="Verb";
+    adjectiveButton.textContent="Adjective";
+    nounButton.textContent="Noun";
+    placeButton.textContent="Place";
+    story.textContent="";
 }
 
-subjectButton.addEventListener('click',subjectChange);
+subjectButton.addEventListener('click', subjectChange);
 
-verbButton.addEventListener('click',verbChange);
+verbButton.addEventListener('click', verbChange);
 
-adjectiveButton.addEventListener('click',adjectiveChange);
+adjectiveButton.addEventListener('click', adjectiveChange);
 
-nounButton.addEventListener('click',nounChange);
+nounButton.addEventListener('click', nounChange);
 
-placeButton.addEventListener('click',placeChange);
+placeButton.addEventListener('click', placeChange);
 
-submitButton.addEventListener('click',storyOutput);
+submitButton.addEventListener('click', storyOutput);
+
+resetButton.addEventListener('click', reset);
