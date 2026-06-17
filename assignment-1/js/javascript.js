@@ -36,7 +36,7 @@ const resetButton = document.getElementById('Reset');
 const story = document.getElementById('Story');
 //Functions for changes.
 //Each one follows the same format where it adds to the counter on each click, updating which word is displayed on the button and will be added to the story output.
-function subjectChange(event){
+function subjectChange(){
     subjectCounter++;
     subjectButton.textContent = subjectArray[subjectCounter];
     if(subjectCounter==subjectArray.length){
@@ -45,7 +45,7 @@ function subjectChange(event){
     }
 }
 
-function verbChange(event){
+function verbChange(){
     verbCounter++;
     verbButton.textContent = verbArray[verbCounter];
     if(verbCounter==verbArray.length){
@@ -54,7 +54,7 @@ function verbChange(event){
     }
 }
 
-function adjectiveChange(event){
+function adjectiveChange(){
     adjectiveCounter++;
     adjectiveButton.textContent=adjectiveArray[adjectiveCounter];
     if(adjectiveCounter==adjectiveArray.length){
@@ -63,7 +63,7 @@ function adjectiveChange(event){
     }
 }
 
-function nounChange(event){
+function nounChange(){
     nounCounter++;
     nounButton.textContent=nounArray[nounCounter];
     if(nounCounter==nounArray.length){
@@ -72,7 +72,7 @@ function nounChange(event){
     }
 }
 
-function placeChange(event){
+function placeChange(){
     placeCounter++;
     placeButton.textContent=placeArray[placeCounter];
     if(placeCounter==placeArray.length){
@@ -81,7 +81,7 @@ function placeChange(event){
     }
 }
 //Story output handles the randomization so that it can all be output in one button if the buttons are set to their defaults.
-function storyOutput(event){
+function storyOutput(){
     if(subjectCounter == -1){
         //Randomizes ( Each one is done individually so they all aren't the same number. )
         subjectCounter = Math.floor(Math.random()*subjectArray.length);
@@ -117,7 +117,7 @@ function storyOutput(event){
     nounButton.removeEventListener('click',nounChange);
     placeButton.removeEventListener('click',placeChange);
 }
-function reset(event){
+function reset(){
     //Each counter is back at -1.
     subjectCounter = -1;
     verbCounter=-1;
