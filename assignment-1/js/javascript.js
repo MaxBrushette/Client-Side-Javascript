@@ -106,6 +106,12 @@ function storyOutput(event){
         placeButton.style.color='red';
     }
     story.textContent = "" + subjectArray[subjectCounter] + " " + verbArray[verbCounter] + " " + adjectiveArray[adjectiveCounter] + " " + nounArray[nounCounter] + " " + placeArray[placeCounter];
+
+    subjectButton.removeEventListener('click',subjectChange);
+    verbButton.removeEventListener('click',verbChange);
+    adjectiveButton.removeEventListener('click',adjectiveChange);
+    nounButton.removeEventListener('click',nounChange);
+    placeButton.removeEventListener('click',placeChange);
 }
 function reset(event){
     subjectCounter = -1;
@@ -120,6 +126,18 @@ function reset(event){
     nounButton.textContent="Noun";
     placeButton.textContent="Place";
     story.textContent="";
+
+    subjectButton.style.color='';
+    verbButton.style.color='';
+    adjectiveButton.style.color='';
+    nounButton.style.color='';
+    placeButton.style.color='';
+
+    subjectButton.addEventListener('click', subjectChange);
+    verbButton.addEventListener('click', verbChange);
+    adjectiveButton.addEventListener('click', adjectiveChange);
+    nounButton.addEventListener('click', nounChange);
+    placeButton.addEventListener('click', placeChange);
 }
 
 subjectButton.addEventListener('click', subjectChange);
