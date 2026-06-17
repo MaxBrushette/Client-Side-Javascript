@@ -46,8 +46,17 @@ function verbChange(event){
     }
 }
 
-
+function adjectiveChange(event){
+    adjectiveCounter++;
+    adjectiveButton.textContent=adjectiveArray[adjectiveCounter];
+    if(adjectiveCounter==adjectiveArray.length){
+        adjectiveButton.textContent = "Adjective";
+        adjectiveCounter=-1;
+    }
+}
 
 subjectButton.addEventListener('click',subjectChange);
 
 verbButton.addEventListener('click',verbChange);
+
+adjectiveButton.addEventListener('click',adjectiveChange);
