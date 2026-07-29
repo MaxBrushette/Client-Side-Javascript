@@ -1,5 +1,6 @@
 const output = document.querySelector("#output");
 const form = document.querySelector("#pizza-creation");
+const id = document.querySelector("#id");
 //Creating the class constructor and the order() function.
 class Pizza {
     constructor(firstName,lastName,size,sauce,toppings,specialty){
@@ -47,3 +48,5 @@ form.addEventListener("submit",function(event){
     );
     output.textContent = pizza.order();
 });
+var studentId = "200635928";
+id.textContent = studentId;
