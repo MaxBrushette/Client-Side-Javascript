@@ -9,6 +9,57 @@
         <script src="js/javascript.js" defer></script>
     </head>
     <body>
-        <
+        <main>
+            <header>
+                <h1>Pizza Maker</h1>
+                <form id="pizza-creation" action="pizza-process-form.js" method="post">
+                    <input type="hidden" name="form-sent" value="1" />
+                    <fieldset>
+                        <legend>Name for Order</legend>
+                        <label for="fname">First name</label>
+                        <input type="text" name="fname" id="fname" required />
+                        <label for="lname">Last name</label>
+                        <input type="text" name="lname" required />
+                    </fieldset>
+                    <fieldset>
+                        <legend>Size of Pizza</legend>
+                        <label for="small">Small - 6 Slices</label>
+                        <input type="radio" id="small" name="size" value="small-pizza"/>
+                        <label for="medium">Medium - 8 Slices</label>
+                        <input type="radio" id="medium" name="size" value="medium-pizza"/>
+                        <label for="large">Large - 10 Slices</label>
+                        <input type="radio" id="large" name="size" value="large-pizza"/>
+                        <label for="x-large">Extra Large - 12 Slices</label>
+                        <input type="radio" id="x-large" name="size" value="x-large-pizza"/>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Sauce</legend>
+                        <label for="marinara">Marinara</label>
+                        <input type="radio" id="marinara" name="marinara" value="sauce-marinara"/>
+                        <label for="alfredo">Alfredo Sauce</label>
+                        <input type="radio" id="alfredo" name="alfredo" value="sauce-alfredo"/>
+                        <label for="honeybbq">Honey Barbecue</label>
+                        <input type="radio" id="honeybbq" name="honeybbq" value="sauce-honeybbq"/>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Toppings</legend>
+                            <label for="pepperoni">Pepperoni</label>
+                            <input type="checkbox" id="pepperoni" name="topping[]" value="pepperonis" /><br />
+                            <label for="sausage">Sausage</label>
+                            <input type="checkbox" id="sausage" name="topping[]" value="sausages" /><br />
+                            <label for="mushroom">Mushroom</label>
+                            <input type="checkbox" id="mushroom" name="topping[]" value="mushrooms" /><br />
+                            <label for="ham">Ham</label>
+                            <input type="checkbox" id="ham" name="topping[]" value="ham" /><br />
+                            <label for="pineapple">Pineapple</label>
+                            <input type="checkbox" id="pineapple" name="topping[]" value="pineapples"/><br />
+                            <label for="tomato">Tomato</label>
+                            <input type="checkbox" id="tomato" name="topping[]" value="tomatoes" /><br />
+                            <label for="pepper">Pepper</label>
+                            <input type="checkbox" id="pepper" name="topping[]" value="peppers" />
+                    </fieldset>
+                </form>
+            </header>
+        </main>
     </body>
 </html>
