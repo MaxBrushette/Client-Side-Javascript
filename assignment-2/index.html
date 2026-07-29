@@ -35,11 +35,11 @@
                     <fieldset>
                         <legend>Sauce</legend>
                         <label for="marinara">Marinara</label>
-                        <input type="radio" id="marinara" name="marinara" value="sauce-marinara"/>
+                        <input type="radio" id="marinara" name="sauce" value="marinara"/>
                         <label for="alfredo">Alfredo Sauce</label>
-                        <input type="radio" id="alfredo" name="alfredo" value="sauce-alfredo"/>
+                        <input type="radio" id="alfredo" name="sauce" value="alfredo"/>
                         <label for="honeybbq">Honey Barbecue</label>
-                        <input type="radio" id="honeybbq" name="honeybbq" value="sauce-honeybbq"/>
+                        <input type="radio" id="honeybbq" name="sauce" value="honeybbq"/>
                     </fieldset>
                     <fieldset>
                         <legend>Toppings</legend>
@@ -58,6 +58,17 @@
                             <label for="pepper">Pepper</label>
                             <input type="checkbox" id="pepper" name="topping[]" value="peppers" />
                     </fieldset>
+                    <fieldset>
+                        <legend>Specialties</legend>
+                        <label for="stuffed-crust">Stuffed Crust</label>
+                        <input type="radio" id="stuffed-crust" name="specialty" value="stuffed-crust"/>
+                        <label for="garlic-crust">Garlic Crust</label>
+                        <input type="radio" id="garlic-crust" name="specialty" value="garlic-crust"/>
+                        <label for="honey-drizzle">Honey Drizzle</label>
+                        <input type="radio" id="honey-drizzle" name="specialty" value="honey-drizzle"/>
+                    </fieldset>
+                    <button type="submit">Order</button>
+                    <p id=output>Output</p>
                 </form>
             </header>
         </main>
