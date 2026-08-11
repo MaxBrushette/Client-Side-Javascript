@@ -1,7 +1,21 @@
 const output = document.getElementById('output');
 
 /* STEP 1: Create an object (looks a lot like declaring a variable, but with empty braces), then open this page in a browser and enter 'person' in the console */
-
+let person = {
+    name: {
+        firstName: "Max",
+        lastName: "Brushette"
+    },
+    age: 16,
+    gender: "Male",
+    interests: ["Jack","Coding","Gaming"],
+    greetings: function(){
+        return "Hello, my name is " + person.name;
+    },
+    bio: function(){
+        return `The interests of ${this.name}, of age: ${this.age}, of gender: ${this.gender}, are ${this.interests.join(" - ")}.`
+    }
+}
 
 /* STEP 2a: Add other data items to the above object, like name, age, gender, and interests */
 
@@ -41,13 +55,22 @@ const output = document.getElementById('output');
 
 
 /* STEP 9b: Add a new function called 'goodbye' to the person object and try it by typing person.goodbye into the console */
-
+person.goodbye = function(){
+    return `This is ${this.name.firstName} signing off.`;
+}
 
 /* STEP 10: We can also dynamically set both names and values for objects (using bracket syntax)… */
-
+let key = "hairColor";
+let value = "Blonde";
+person[key]=value;
 
 /* STEP 11a: 'this' is very useful - it allows us to refer to the object in question, specifically. This will become much clearer later in the course. Create two new objects, each with a name, and a function that outputs the name */
-
+let person1 = {
+    name: "Jack",
+    hello: function(){
+        return `Hey, this is ${this.name}.`;
+    }
+}
 
 /* STEP 11b: Call up both person1.hello() and person2.hello() in the console to see how 'this' is specific to each object */
 
