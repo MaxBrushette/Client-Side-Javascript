@@ -28,8 +28,10 @@ function getPokemon(event){
 
 function displayPokemon(json){
     console.log(json);
+    let pokeName = json.name;
+    pokeName = pokeName.charAt(0).toUpperCase() + pokeName.slice(1);
     card.querySelector("p").textContent=json.id;
-    card.querySelector("h2").textContent=json.id;
+    card.querySelector("h2").textContent=pokeName;
     pokeImg.src=json.sprites.front_default;
     pokeImg.alt=json.name;
 }
