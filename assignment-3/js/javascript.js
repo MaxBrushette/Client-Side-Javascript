@@ -1,25 +1,35 @@
+const baseURL = "https://pokeapi.co/api/v2/pokemon";
+
 const form = document.querySelector("form");
 const pokeReq = document.querySelector("#pokeReq");
 
 const card = document.querySelector("#card");
 const pokeImg = document.querySelector("#pokeImg");
 
-form.addEventListener("submit", function (event){
+form.addEventListener("submit", getPokemon);
+
+function getPokemon(event){
     event.preventDefault();
+    let pokemon = pokeReq.value.trim().toLowerCase();
 
-    const pokemon = pokeReq.value.trim().toLowerCase();
-
-    if(pokemon===""){
+    if(pokemon === ""){
         return;
     }
-    
-    const APIResponse = fetch(
-        `https://pokeapi.co/api/v2/pokemon/${pokemon}`
-    );
+    let url = `${baseURL}/${pokemon}`;
 
-    const data = APIResponse.json();
-    card.querySelector("p").textContent = data.id;
-    card.querySelector("h2").textContent = data.name;
-    pokeImg.src = data.sprites.front_default;
-    pokeImg.alt = data.name;
-})
+    fetch(url)
+    .then(response=>{
+        return response.json();
+    })
+    .then(json=>{
+        displayPokemon(json);
+    })
+}
+
+function displayPokemon(json){
+    console.log(json);
+    card.querySelector("p").textContent=json.id;
+    card.querySelector("h2").textContent=json.id;
+    pokeImg.src=json.sprites.front_default;
+    pokeImg.alt=json.name;
+}
