@@ -1,6 +1,17 @@
 *{
     text-align:center;
+    margin:2px;
 }
 #card{
-    margin: 0 45%
+    
+    max-width:200px;
+    min-height:350px;
+    margin: 0 auto;
+}
+#dex{
+    padding-top:10px;
+}
+#pokeImg{
+    background-color:white;
+    border: 2px solid saddlebrown;
 }
